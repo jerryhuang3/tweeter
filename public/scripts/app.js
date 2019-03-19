@@ -1,20 +1,10 @@
 $(document).ready(function() {
-    function fetchTweets() {
-        $("form").submit(function(event) {
-            event.preventDefault();
-            let string = this.children[0].value.replace(/ /g, "");
-            if (this.children[0].value.length <= 140 && this.children[0].value.length > 0 && string !== "") {
-                $.post("/tweets", $(this).serialize(), function() {
-                    loadTweets();
-                });
-                $("#tweets-container").load("index.html .tweets");
-                
-            } else {
-                return alert("Error! Your tweet is either too long or empty!");
-            }
-        });
+
+    function escape(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
     }
-    
     
     function renderTweets(tweets) {
         for (let i = tweets.length - 1; i >= 0; i--) {
@@ -28,10 +18,10 @@ $(document).ready(function() {
         let $tweet = $("<article>").addClass("tweets");
         $tweet.append(
             `<header>
-                <h2>${tweetData.user.name}</h2>
-                <span>${tweetData.user.handle}</span>
+                <h2>${escape(tweetData.user.name)}</h2>
+                <span>${escape(tweetData.user.handle)}</span>
             </header>
-                <p>${tweetData.content.text}</p>
+                <p>${escape(tweetData.content.text)}</p>
             <footer>${date}</footer>`);
         return $tweet;
     }

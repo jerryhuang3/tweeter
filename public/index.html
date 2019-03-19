@@ -54,21 +54,21 @@
       <section id="tweets-container" class="container"></section>
       
     </main>
-    <!--<script>-->
-      <!--$("form").submit(function(event) {-->
-        <!--event.preventDefault();-->
-        <!--let string = this.children[0].value.replace(/ /g, "");-->
-        <!--if (this.children[0].value.length <= 140 && this.children[0].value.length > 0 && string !== "") {-->
-          <!--$.post("/tweets", $(this).serialize(), function() {-->
-            <!--$.getScript("/scripts/app.js");-->
-          <!--});-->
-          <!--$("#tweets-container").load("index.html .tweets");-->
-        <!--} else {-->
-          <!--return alert("Error! Your tweet is either too long or empty!");-->
-        <!--}-->
-        <!---->
-      <!--});-->
-    <!--</script>-->
+    <script>
+      $("form").submit(function(event) {
+        event.preventDefault();
+        let string = this.children[0].value.replace(/ /g, "");
+        if (this.children[0].value.length <= 140 && this.children[0].value.length > 0 && string !== "") {
+          $.post("/tweets", $(this).serialize(), function() {
+            $.getScript("/scripts/app.js");
+          });
+          $("#tweets-container").load("index.html .tweets");
+        } else {
+          return alert("Error! Your tweet is either too long or empty!");
+        }
+        
+      });
+    </script>
   </body>
 </html>
 
