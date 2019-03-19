@@ -1,6 +1,6 @@
 $(document).ready(function() {
     function renderTweets(tweets) {
-        for (let i = 0; i < tweets.length; i++) {
+        for (let i = tweets.length - 1; i >= 0; i--) {
             let $tweet = createTweets(tweets[i]);
             $('#tweets-container').append($tweet);
         }
