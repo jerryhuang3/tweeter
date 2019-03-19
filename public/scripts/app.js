@@ -5,6 +5,7 @@
  */
 
 // Test / driver code (temporary). Eventually will get this from the server.
+$(document).ready(function() {
 const tweetData = {
     "user": {
         "name": "Newton",
@@ -21,8 +22,23 @@ const tweetData = {
     "created_at": 1461116232227
 }
 
-var $tweet = createTweetElement(tweetData);
 
+function createTweets(tweetData) {
+    let date = tweetData.created_at;
+    let $tweet = $("<article>").addClass("tweets");
+    $tweet.append( 
+        `<header>
+            <h2 class="tweets">${tweetData.user.name}</h2>
+            <span class="tweets">${tweetData.user.handle}</span>
+        </header>
+        <body>
+            <p class="tweets">${tweetData.content.text}</body>
+        <footer>${date}</footer>`);
+    $('#tweets-container').append($tweet);
+}
+
+createTweets(tweetData);
 // Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+ // to see what it looks like
+ // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+});
