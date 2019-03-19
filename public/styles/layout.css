@@ -31,8 +31,13 @@ main.container {
   background-color: white;
   padding-top: 80px;
   padding-bottom: 80px;
+  
 }
 
-tweet.container {
-  
+main.tweets {
+  width: 450px;
+  margin: auto;
+  background-color: white;
+  overflow: auto;
+
 }

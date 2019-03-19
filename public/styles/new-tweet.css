@@ -1,5 +1,5 @@
 section.new-tweet {
-    border: 2px lightgray;
+    border: 1px lightgray;
     border-style: solid;
     border-radius: 6px;
     padding-left: 10px;
@@ -19,7 +19,6 @@ section.new-tweet {
 .new-tweet textarea {
     width: 100%;
     max-width: 100%;
-    
 }
 
 .new-tweet span.counter {
