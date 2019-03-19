@@ -44,7 +44,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="post" action="/tweets">
+        <form method="POST" action="/tweets">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
@@ -53,6 +53,14 @@
       <!-- Previous Tweets -->
       <section id="tweets-container"></section>
       
-    </main> 
+    </main>
+    <script>
+      $("form").submit(function(event) {
+        event.preventDefault();
+        $.post("/tweets", $(this).serialize());
+      });
+    </script>
   </body>
 </html>
+
+

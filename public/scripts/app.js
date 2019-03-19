@@ -67,12 +67,11 @@ $(document).ready(function() {
         let $tweet = $("<article>").addClass("tweets");
         $tweet.append(
             `<header>
-            <h2 class="tweets">${tweetData.user.name}</h2>
-            <span class="tweets">${tweetData.user.handle}</span>
-        </header>
-        <body>
-            <p class="tweets">${tweetData.content.text}</body>
-        <footer>${date}</footer>`);
+                <h2>${tweetData.user.name}</h2>
+                <span>${tweetData.user.handle}</span>
+            </header>
+                <p>${tweetData.content.text}</p>
+            <footer>${date}</footer>`);
         return $tweet;
     }
 
