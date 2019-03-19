@@ -27,10 +27,10 @@ body {
 
 main.container {
   width: 450px;
+  height: 100%;
   margin: auto;
   background-color: white;
   padding-top: 80px;
   padding-bottom: 80px;
-  
 }
 
