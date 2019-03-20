@@ -6,8 +6,9 @@ $(document).ready(function() {
 
     $("form").submit(function(event) {
         event.preventDefault();
-        let string = this.children[1].value.replace(/ /g, "");
-        if (this.children[1].value.length <= 140 && this.children[1].value.length > 0 && string !== "") {
+        let string = $(this[0]).val().trim();
+        console.log($(this[0]).val());
+        if ($(this[0]).val("") <= 140 && string !== "") {
             $.post("/tweets", $(this).serialize(), function() {
                 $.getScript("/scripts/app.js");
             });
@@ -46,7 +47,9 @@ $(document).ready(function() {
                 <span>${escape(tweetData.user.handle)}</span>
             </header>
                 <p>${escape(tweetData.content.text)}</p>
-            <footer>${moment(tweetData.created_at).fromNow()}</footer>`);
+            <footer>
+                 <span class="time">${moment(tweetData.created_at).fromNow()}</span>
+            </footer>`);
         return $tweet;
     }
     

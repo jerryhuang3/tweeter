@@ -1,4 +1,4 @@
-article.tweets {
+#tweets-container article.tweets {
     border: 1px lightgray;
     border-style: solid;
     border-radius: 6px;
@@ -7,24 +7,24 @@ article.tweets {
     opacity: 0.5;
 }
 
-article.tweets:hover {
+#tweets-container article.tweets:hover {
     opacity: 1;
 }
 
-.tweets header {
+#tweets-container header {
     border-bottom: 1px solid lightgray;
     background-color: #eee;
     height: 60px;
 }
 
-.tweets img {
+#tweets-container img {
     height: 40px;
     width: 40px;
     margin: 10px 0 0 10px;
     float: left;
 }
 
-.tweets h2 {
+#tweets-container h2 {
     line-height: 40px;
     padding: 0 0 0 10px;
     margin-top: 0px;
@@ -32,13 +32,13 @@ article.tweets:hover {
     float: left;
 }
 
-.tweets span{
+#tweets-container span{
     float: right;
     padding: 10px 10px;
     font-size: .75em;
 }
 
-.tweets p {
+#tweets-container p {
     border-bottom: 1px solid lightgray;
     background-color: white;
     height: 80px;
@@ -46,7 +46,7 @@ article.tweets:hover {
     padding: 10px 10px;
 }
 
-.tweets footer {
+#tweets-container time {
     background-color: white;
     height: 40px;
     line-height: 40px;
