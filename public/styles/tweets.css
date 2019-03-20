@@ -1,0 +1,48 @@
+article.tweets {
+    border: 1px lightgray;
+    border-style: solid;
+    border-radius: 6px;
+    margin: 2em;
+    overflow: auto;
+    opacity: 0.5;
+}
+
+article.tweets:hover {
+    opacity: 1;
+}
+
+.tweets header {
+    border-bottom: 1px solid lightgray;
+    background-color: #eee;
+    height: 60px;
+}
+
+.tweets h2 {
+    line-height: 40px;
+    padding: 0 0 0 60px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    float: left;
+}
+
+.tweets span{
+    float: right;
+    padding: 10px 10px;
+    font-size: .75em;
+}
+
+.tweets p {
+    border-bottom: 1px solid lightgray;
+    background-color: white;
+    height: 80px;
+    margin: 0;
+    padding: 10px 10px;
+}
+
+.tweets footer {
+    background-color: white;
+    height: 40px;
+    line-height: 40px;
+    font-size: .75em;
+    padding: 0px 10px;
+}
