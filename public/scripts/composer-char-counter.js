@@ -3,7 +3,6 @@ $(document).ready(function() {
         $("textarea").keyup(function() {
             let tweetChar = $(this).val().length;
             const form = this.parentNode; // Traversing up the DOM
-            const count = form.children[2]; 
             let remaining = maxInput - tweetChar;
             $(".counter")[0].textContent = remaining;
             if ($(".counter")[0].textContent < 0) {

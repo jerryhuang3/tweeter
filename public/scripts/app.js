@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     $(".compose").click(function(){
         $(".new-tweet").slideToggle("fast");
         $("textarea").focus();
@@ -7,9 +8,9 @@ $(document).ready(function() {
     $("form").submit(function(event) {
         event.preventDefault();
         let string = $(this[0]).val().trim();
-        if ($(this[0]).val("") <= 140 && string !== "") {
+        if ($(this[0]).val().length <= 140 && string !== "") {
             $.post("/tweets", $(this).serialize(), function() {
-                $.getScript("/scripts/app.js");
+                loadTweets();
             });
             $("#tweets-container").load("index.html .tweets");
             $(this[0]).val("");
