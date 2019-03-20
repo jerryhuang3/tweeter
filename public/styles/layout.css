@@ -18,7 +18,7 @@ body {
   margin: 0;  
   color: #244751;
   background-color: #eee;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Bree Serif', serif;
 }
 
 /*
@@ -26,11 +26,13 @@ body {
  */
 
 main.container {
-  width: 450px;
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+  width: 1vmax;
   height: 100%;
   margin: auto;
   background-color: white;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 10px;
 }
 

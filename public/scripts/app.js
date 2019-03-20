@@ -5,6 +5,14 @@ $(document).ready(function() {
         $("textarea").focus();
     });
 
+    $('tweets-container article:lt(3)').show();
+    $('#loadMore').click(function () {
+        $('#myList li:lt(10)').show();
+    });
+    $('#showLess').click(function () {
+        $('#myList li').not(':lt(3)').hide();
+    });
+
     $("form").submit(function(event) {
         event.preventDefault();
         let string = $(this[0]).val().trim();

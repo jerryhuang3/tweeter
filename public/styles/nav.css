@@ -1,13 +1,20 @@
 #nav-bar {
-    position: relative;
+    position: sticky;
+    top: 0;
     height: 80px;
     width: 100%;
-    min-width: 460px;
+    min-width: 500px;
     background-color: #00a087;
     color: #e8fdff;
     padding-left: 2em;
     padding-right: 2em;
     z-index: 1;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
 }
 
 #nav-bar .logo {
@@ -35,10 +42,8 @@
     border-radius: 6px;
     background-color: white;
     margin-top: 10px;
-    padding-left: 30px;
-    width: 120px;
+    width: 140px;
     height: 60px;
-    line-height: 40px;
     font-size: 1.25em;
     color: #00a087;
 }
