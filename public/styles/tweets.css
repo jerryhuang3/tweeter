@@ -32,7 +32,7 @@
     float: left;
 }
 
-#tweets-container span{
+#tweets-container .handle{
     float: right;
     padding: 10px 10px;
     font-size: .75em;
@@ -45,11 +45,19 @@
     margin: 0;
     padding: 10px 10px;
 }
-
-#tweets-container time {
+#tweets-container footer {
     background-color: white;
     height: 40px;
-    line-height: 40px;
-    font-size: .75em;
-    padding: 0px 10px;
+}
+
+#tweets-container .time {
+     line-height: 40px;
+     font-size: .75em;
+     padding: 0 0 0 10px;
+     float: left;
+ }
+
+#tweets-container i {
+    padding: 10px 10px 0 0;
+    float: right;
 }
