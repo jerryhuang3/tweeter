@@ -5,14 +5,6 @@ $(document).ready(function() {
         $("textarea").focus();
     });
 
-    $('tweets-container article:lt(3)').show();
-    $('#loadMore').click(function () {
-        $('#myList li:lt(10)').show();
-    });
-    $('#showLess').click(function () {
-        $('#myList li').not(':lt(3)').hide();
-    });
-
     $("form").submit(function(event) {
         event.preventDefault();
         let string = $(this[0]).val().trim();
@@ -31,6 +23,8 @@ $(document).ready(function() {
             return;
         }
     });
+    
+    
     
     function escape(str) {
         var div = document.createElement('div');
@@ -57,8 +51,6 @@ $(document).ready(function() {
             <footer>
                  <span class="time">${moment(tweetData.created_at).fromNow()}</span>
                  <i class="fas fa-heart"></i>
-                 <i class="fas fa-retweet"></i>
-                 <i class="fas fa-flag"></i>
             </footer>`);
         return $tweet;
     }

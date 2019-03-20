@@ -29,10 +29,9 @@ main.container {
   display: flex;
   flex-direction: column;
   min-width: 500px;
-  width: 1vmax;
+  max-width: 50vw;
   height: 100%;
   margin: auto;
   background-color: white;
-  padding-top: 10px;
 }
 
