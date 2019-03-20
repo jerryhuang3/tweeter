@@ -23,3 +23,20 @@
     left: 2em;
     float: left;
 }
+#nav-bar .compose:hover {
+    color: black;
+}
+
+#nav-bar .compose {
+    float: right;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: white;
+    margin-top: 10px;
+    padding-left: 30px;
+    width: 120px;
+    height: 60px;
+    line-height: 40px;
+    font-size: 1.25em;
+    color: #00a087;
+}
