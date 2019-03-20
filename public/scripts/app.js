@@ -13,6 +13,7 @@ $(document).ready(function() {
             });
             $("#tweets-container").load("index.html .tweets");
             $(this[0]).val("");
+            $(this[1]).next()[0].textContent = "140";
             $(".error").addClass("hidden");
             $("textarea").removeClass("textarea-error");
         } else {

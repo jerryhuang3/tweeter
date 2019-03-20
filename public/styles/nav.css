@@ -1,11 +1,13 @@
 #nav-bar {
-    position: absolute;
+    position: fixed;
     height: 80px;
     width: 100%;
+    min-width: 460px;
     background-color: #00a087;
     color: #e8fdff;
     padding-left: 2em;
     padding-right: 2em;
+    z-index: 1;
 }
 
 #nav-bar .logo {
