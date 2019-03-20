@@ -28,4 +28,15 @@ section.new-tweet {
 
 .new-tweet span.error {
     color: red;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.new-tweet .textarea-error {
+    border: 2px solid red;
+    color: red;
+}
+
+.new-tweet .hidden {
+    display: none;
 }

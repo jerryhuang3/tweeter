@@ -46,6 +46,7 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
+          <span class="error hidden">Please enter a valid tweet.</span>
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
@@ -58,14 +59,19 @@
     <script>
       $("form").submit(function(event) {
         event.preventDefault();
-        let string = this.children[0].value.replace(/ /g, "");
-        if (this.children[0].value.length <= 140 && this.children[0].value.length > 0 && string !== "") {
+        let string = this.children[1].value.replace(/ /g, "");
+        if (this.children[1].value.length <= 140 && this.children[1].value.length > 0 && string !== "") {
           $.post("/tweets", $(this).serialize(), function() {
             $.getScript("/scripts/app.js");
           });
           $("#tweets-container").load("index.html .tweets");
+          $(this[0]).val("")
+          $(".error").addClass("hidden");
+          $("textarea").removeClass("textarea-error");
         } else {
-          return alert("Error! Your tweet is either too long or empty!");
+          $(".error").removeClass("hidden");
+          $("textarea").addClass("textarea-error");
+          return;
         }
         
       });
