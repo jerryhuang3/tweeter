@@ -7,16 +7,19 @@ $(document).ready(function() {
 
     $("form").submit(function(event) {
         event.preventDefault();
+        console.log($(this).serialize());
         let string = $(this[0]).val().trim();
         if ($(this[0]).val().length <= 140 && string !== "") {
+            
             $.post("/tweets", $(this).serialize(), function() {
                 loadTweets();
+            }).then(function() {
+                $("#tweets-container").load("index.html .tweets");
+                $(this[0]).val("");
+                $(this[1]).next()[0].textContent = "140";
+                $(".error").addClass("hidden");
+                $("textarea").removeClass("textarea-error");
             });
-            $("#tweets-container").load("index.html .tweets");
-            $(this[0]).val("");
-            $(this[1]).next()[0].textContent = "140";
-            $(".error").addClass("hidden");
-            $("textarea").removeClass("textarea-error");
         } else {
             $(".error").removeClass("hidden");
             $("textarea").addClass("textarea-error");
@@ -30,8 +33,15 @@ $(document).ready(function() {
     });
 
     // Clicking heart function
-    $('section').on('click', '[data-fa-i2svg]', function () {
-        alert('You clicked the icon itself');
+    $("section").on('click', '[data-fa-i2svg]', function () {
+        console.log($(this));
+        let tweetNum = $(this).parents("article.tweets").attr("data-num");
+        let tweetUser = $(this).parents("article.tweets").find(".handle").text();
+        $.post("/likes", {text: tweetUser}, function () {
+            loadTweets();
+        }).then(function () {
+            $("#tweets-container").load($(this));
+        });
     });
     
     function escape(str) {
@@ -43,6 +53,7 @@ $(document).ready(function() {
     function renderTweets(tweets) {
         for (let i = tweets.length -1; i >= 0; i--) {
             $tweet = createTweets(tweets[i]);
+            $tweet.attr("data-num", i);
             $('#tweets-container').append($tweet);
         }
     }
@@ -55,9 +66,10 @@ $(document).ready(function() {
                 <h2>${escape(tweetData.user.name)}</h2>
                 <span class="handle">${escape(tweetData.user.handle)}</span>
             </header>
-                <p>${escape(tweetData.content.text)}</p>
+            <p>${escape(tweetData.content.text)}</p>
             <footer>
                  <span class="time">${moment(tweetData.created_at).fromNow()}</span>
+                 <span class="count">${tweetData.content.likes}</span>
                  <i class="fas fa-heart fa-lg"></i>
             </footer>`);
         return $tweet;

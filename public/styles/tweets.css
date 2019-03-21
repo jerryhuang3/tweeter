@@ -47,6 +47,7 @@
 }
 
 #tweets-container footer {
+    position: relative;
     background-color: white;
     height: 40px;
 }
@@ -58,18 +59,23 @@
     float: left;
  }
 
+#tweets-container .count {
+    position: absolute;
+    right: 2.5rem;
+    line-height: 40px;
+}
+
 #tweets-container svg {
     padding: 10px 10px 0 0;
     float: right;
-    color: red;
-    font-size: 1.75rem;
-    visibility: hidden;
+    font-size: 2rem;
 }
 
 #tweets-container svg:hover {
-    font-size: 2rem;
+    color: red;
 }
 
 #tweets-container .tweets:hover svg {
     visibility: visible;
 }
+
