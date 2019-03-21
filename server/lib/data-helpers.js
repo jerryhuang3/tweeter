@@ -19,5 +19,16 @@ module.exports = function makeDataHelpers(db) {
       db.collection("tweets").find().toArray(callback);
     }
 
+    // Saves a like to `db`
+    saveLike: function(saveLike, callback) {
+
+      db.collection("tweets").insertOne(saveLike, callback);
+
+    },
+
+    // Get all like in `db`
+    getLike: function(callback) {
+      db.collection("tweets").find().toArray(callback);
+    }
   };
 }

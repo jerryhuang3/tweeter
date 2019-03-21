@@ -1,4 +1,4 @@
-#tweets-container article.tweets {
+#tweets-container .tweets {
     border: 1px lightgray;
     border-style: solid;
     border-radius: 6px;
@@ -7,7 +7,7 @@
     opacity: 0.5;
 }
 
-#tweets-container article.tweets:hover {
+#tweets-container .tweets:hover {
     opacity: 1;
 }
 
@@ -45,19 +45,31 @@
     margin: 0;
     padding: 10px 10px;
 }
+
 #tweets-container footer {
     background-color: white;
     height: 40px;
 }
 
 #tweets-container .time {
-     line-height: 40px;
-     font-size: .75em;
-     padding: 0 0 0 10px;
-     float: left;
+    line-height: 40px;
+    font-size: .75em;
+    padding: 0 0 0 10px;
+    float: left;
  }
 
-#tweets-container i {
+#tweets-container svg {
     padding: 10px 10px 0 0;
     float: right;
+    color: red;
+    font-size: 1.75rem;
+    visibility: hidden;
+}
+
+#tweets-container svg:hover {
+    font-size: 2rem;
+}
+
+#tweets-container .tweets:hover svg {
+    visibility: visible;
 }

@@ -23,8 +23,16 @@ $(document).ready(function() {
             return;
         }
     });
-    
-    
+
+    $("textarea").on("click", function() {
+        $(".error").addClass("hidden");
+        $("textarea").removeClass("textarea-error");
+    });
+
+    // Clicking heart function
+    $('section').on('click', '[data-fa-i2svg]', function () {
+        alert('You clicked the icon itself');
+    });
     
     function escape(str) {
         var div = document.createElement('div');
@@ -50,7 +58,7 @@ $(document).ready(function() {
                 <p>${escape(tweetData.content.text)}</p>
             <footer>
                  <span class="time">${moment(tweetData.created_at).fromNow()}</span>
-                 <i class="fas fa-heart"></i>
+                 <i class="fas fa-heart fa-lg"></i>
             </footer>`);
         return $tweet;
     }
