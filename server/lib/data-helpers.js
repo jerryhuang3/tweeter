@@ -1,5 +1,5 @@
 "use strict";
-
+let like = false;
 
 // Defines helper functions for saving and getting tweets, using the database `db`
 module.exports = function makeDataHelpers(db) {
@@ -7,28 +7,25 @@ module.exports = function makeDataHelpers(db) {
 
     // Saves a tweet to `db`
     saveTweet: function(newTweet, callback) {
-
       db.collection("tweets").insertOne(newTweet, callback);
-      // db.collection("tweets").update({"_id" :ObjectId("...") },{$set : {"content.id":}})
     },
 
     // Get all tweets in `db`, sorted by newest first
     getTweets: function(callback) {
-      db.collection("tweets").find().toArray(callback);
+      db.collection("tweets").find().toArray(callback); 
     },
-
+    
     // Saves a like to `db`
     saveLike: function(saveLike, callback) {
-      console.log(saveLike);
-      db.collection("tweets").update(
-          { "user.handle" : saveLike},
-          { $inc: { "content.likes": 1} }, callback
-      )
+        db.collection("tweets").update(
+            {"user.handle": saveLike},
+            {$inc: {"content.likes": 1}}, callback);
     },
 
-    // Get all like in `db`
+    // Get all likes in `db`
     getLike: function(callback) {
       db.collection("tweets").find().toArray(callback);
     }
+  
   };
 };

@@ -65,17 +65,24 @@
     line-height: 40px;
 }
 
-#tweets-container svg {
-    padding: 10px 10px 0 0;
-    float: right;
-    font-size: 2rem;
+#tweets-container .me {
+    visibility: hidden;
 }
 
-#tweets-container svg:hover {
+#tweets-container span.like{
+    position: absolute;
+    font-size: .5rem;
+    right: 2.5rem;
+}
+
+#tweets-container i {
+    padding: 10px 10px 0 0;
+    float: right;
+    font-size: 1.5rem;
     color: red;
 }
 
-#tweets-container .tweets:hover svg {
-    visibility: visible;
+#tweets-container i:hover {
+    font-size: 1.75rem;
 }
 

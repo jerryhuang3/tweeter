@@ -30,8 +30,11 @@ main.container {
   flex-direction: column;
   min-width: 500px;
   max-width: 50vw;
-  height: 100%;
   margin: auto;
+  min-height: 100vh;
+  background-size: contain;
   background-color: white;
 }
+
+
 
