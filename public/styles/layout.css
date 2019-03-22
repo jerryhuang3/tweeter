@@ -24,21 +24,13 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-  main.container {
-    display: flex;
-    flex-direction: column;
-    min-width: 500px;
-    max-width: 600px;
-    margin: auto;
-    min-height: 100vh;
-    background-size: contain;
-    background-color: white;
-  }
-
-@media only screen and (max-width: 900px) {
-  main.container {
-    max-width: 100%;
-    background-size: contain;
-    background-color: black;
-  }
+main.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+  max-width: 600px;
+  margin: auto;
+  min-height: 100vh;
+  background-size: contain;
+  background-color: white;
 }
