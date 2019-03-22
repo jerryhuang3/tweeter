@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <meta name=”viewport” content=”width=device-width, initial-scale=1″>
-    <!-- Meta Information -->
-    <title>tinyTweet - Home Page</title>
+<meta name=”viewport” content=”width=device-width, initial-scale=1″>
+<!-- Meta Information -->
+<title>tinyTweet - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+<!-- External CSS -->
+<link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-    <!-- External Font -->
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+<!-- External Font -->
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
 
-    <!-- Font Images -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+<!-- Font Images -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+<!-- App CSS -->
+<link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-    <!-- Nav-bar CSS -->
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+<!-- Nav-bar CSS -->
+<link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-    <!-- New-tweet CSS -->
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+<!-- New-tweet CSS -->
+<link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-    <!-- Tweet CSS -->
-    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
-    
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+<!-- Tweet CSS -->
+<link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
-    <!-- Moment time JS-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
-    
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    
-    <!-- Character Counter JS -->
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  </head>
+<!-- External JS -->
+<script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-  <body>
+<!-- Moment time JS-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
 
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-      <img class="logo" src="/images/alligator.png">
-      <span class="header">tinyTweet</span>
-      <button class="compose" type="submit"><i class="far fa-edit"></i> Compose</button>
-    </nav>
+<!-- App JS -->
+<script type="text/javascript" src="/scripts/app.js"></script>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
+<!-- Character Counter JS -->
+<script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</head>
+
+<body>
+
+<!-- Top nav bar (fixed) -->
+<nav id="nav-bar">
+    <a href="/index.html"><img class="logo" src="/images/alligator.png"></a>
+    <span class="header">tinyTweet</span>
+    <button class="compose" type="submit"><i class="far fa-edit"></i> Compose</button>
+</nav>
+
+<!-- Page-specific (main) content here -->
+<main class="container">
+    <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
-          <span class="error hidden">Please enter a valid tweet.</span>
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
-          <span class="counter">140</span>
+            <span class="error hidden">Please enter a valid tweet.</span>
+            <textarea name="text" placeholder="What are you humming about?"></textarea>
+            <input type="submit" value="Tweet">
+            <span class="counter">140</span>
         </form>
-      </section>
-      <!-- Previous Tweets -->
-      <section id="tweets-container"></section>
-    </main>
-   
-  </body>
+    </section>
+    <!-- Previous Tweets -->
+    <section id="tweets-container"></section>
+</main>
+
+</body>
 </html>
 
 

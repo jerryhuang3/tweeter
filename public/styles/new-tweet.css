@@ -1,15 +1,3 @@
-@media (max-width: 900px) {
-    section.new-tweet {
-        border: 1px lightgray;
-        border-style: solid;
-        border-radius: 6px;
-        background-color: #eee;
-        position: sticky;
-        top: 80px;
-        z-index: 1;
-    }
-    
-}
 section.new-tweet {
     border: 1px lightgray;
     border-style: solid;
@@ -22,6 +10,7 @@ section.new-tweet {
     position: sticky;
     top: 80px;
     z-index: 1;
+    display: none;
 }
 
 .new-tweet h2 {

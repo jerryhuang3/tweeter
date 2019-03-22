@@ -27,12 +27,6 @@ $(document).ready(function() {
         }
     });
     
-    // Removes any error messages clicking on the form
-    $("textarea").on("click", function() {
-        $(".error").addClass("hidden");
-        $("textarea").removeClass("textarea-error");
-    });
-
     // Liking tweets function - unlimited likes
     $("section").on('click', '[data-heart]', function () {
         let tweetUser = $(this).parents("article.tweets").find(".handle").text();
