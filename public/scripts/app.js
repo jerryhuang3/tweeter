@@ -38,9 +38,8 @@ $(document).ready(function() {
         let tweetUser = $(this).parents("article.tweets").find(".handle").text();
         $.post("/likes", {text: tweetUser}, function () {
             loadTweets();
-        }).then(function () {
-            $("#tweets-container").load("index.html [data-id]");
         });
+        $("#tweets-container").load("index.html footer");
     });
     
     // Disable cross-site scripting
